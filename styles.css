@@ -1,0 +1,131 @@
+body {
+  font-family: Avenir;
+  border: none;
+}
+h1 {
+  color: #aaaaaa;
+  margin: 0;
+}
+h2 {
+  text-align: center;
+  font-size: 40px;
+  margin: 0px;
+}
+p {
+  text-align: center;
+}
+h5 {
+  text-align: center;
+}
+input {
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid #2852;
+}
+ul {
+  position: relative;
+  padding: 0px;
+  display: block;
+  list-style: none;
+  margin: 0 auto;
+  border: 1px solid white;
+  max-width: 180px;
+  right: -10px;
+  bottom: -30px;
+  background: radial-gradient(
+    592px at 48.2% 50%,
+    rgba(255, 255, 249, 0.6) 0%,
+    rgb(160, 199, 254) 74.6%
+  );
+  border-radius: 5px;
+}
+li {
+  list-style: none;
+  position: relative;
+  text-align: right;
+  padding: 20px 10px 20px 10px;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 1;
+  height: 19px;
+}
+.container {
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  border-radius: 10px;
+  max-width: 1050px;
+  border: 2px solid #28527a;
+  position: relative;
+  margin-top: 40px;
+  width: 100%;
+  max-height: 750px;
+  padding: 30px;
+}
+
+.form {
+  text-align: right;
+  position: relative;
+  top: -35px;
+}
+
+.search {
+  border-radius: 5px;
+  background-color: #28527a;
+  color: white;
+  border: none;
+}
+.temperature {
+  font-size: 50px;
+}
+.card-1,
+.card-2,
+.card-3,
+.card-4,
+.card-5 {
+  margin: 20px 5px 0px 5px;
+  text-align: center;
+  background: radial-gradient(
+    592px at 48.2% 50%,
+    rgba(255, 255, 249, 0.6) 0%,
+    rgb(160, 199, 254) 74.6%
+  );
+  border-radius: 10px;
+}
+
+.currentTime {
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  position: relative;
+  color: #3d3c3c;
+  margin: 0px 10px 20px 10px;
+}
+
+.emoji {
+  font-size: 20px;
+  position: relative;
+  margin: auto;
+}
+.units {
+  position: relative;
+  top: -25px;
+}
+.cloud-icon {
+  color: #28527a;
+  font-size: 50px;
+}
+.sun-icon {
+  color: #fce38a;
+  font-size: 85px;
+}
+.sunny-icon {
+  color: #fce38a;
+  font-size: 50px;
+}
+.rain-icon {
+  color: #aaaaaa;
+  font-size: 50px;
+}
+.partly-icon {
+  color: #1f3c88;
+  font-size: 50px;
+}
