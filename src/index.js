@@ -39,32 +39,21 @@ function showWeather(response){
 }
 
 function displayCityWeather(city){
-    let citySearch = document.querySelector("#search-city").value;
+    
     let apiKey = "e6fd7ecc8e8874aa21ff2b9996064645";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(showWeather);
 }
 
 function searchCity(event){
     event.preventDefault();
-    let city = document.querySelector("#city");
     let cityInput = document.querySelector("#search-city");
-    city.innerHTML = cityInput.value;
-    displayCityWeather(cityInput);    
+    displayCityWeather(cityInput.value);    
 }
+
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
-
-function showPosition(position){
-    let lat = position.coords.latitude;
-    let lon = position.coords.longitude;
-    let units = "metric";
-    let key = "e6fd7ecc8e8874aa21ff2b9996064645";
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=${units}`;
-
-    axios.get(url).then(showWeather);
-}
-
+displayCityWeather("Lisbon");
