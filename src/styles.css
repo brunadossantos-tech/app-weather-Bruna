@@ -52,13 +52,15 @@ li {
 .container {
   background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
   border-radius: 10px;
-  max-width: 1050px;
-  border: 2px solid #28527a;
+  border: 1px solid #28527a;
   position: relative;
+  max-height: 750px;
+  padding: 10;
   margin-top: 40px;
-  width: 100%;
   max-height: 750px;
   padding: 30px;
+  width: 100%;
+  max-width: 1050px;
 }
 
 .form {
