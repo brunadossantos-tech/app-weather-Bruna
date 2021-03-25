@@ -115,23 +115,3 @@ li {
   color: black;
   text-decoration: none;
 }
-.cloud-icon {
-  color: #28527a;
-  font-size: 50px;
-}
-.sun-icon {
-  color: #fce38a;
-  font-size: 85px;
-}
-.sunny-icon {
-  color: #fce38a;
-  font-size: 50px;
-}
-.rain-icon {
-  color: #aaaaaa;
-  font-size: 50px;
-}
-.partly-icon {
-  color: #1f3c88;
-  font-size: 50px;
-}

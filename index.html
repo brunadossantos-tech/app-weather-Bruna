@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/0cec109dc1.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap" rel="stylesheet">
@@ -28,9 +27,9 @@
             Lisbon
             </div>
             </strong>
-            <span class="currentTime" id="currentTime">
-                Wednesday, 22 May
-                 10:30 am
+            <span class="currentTime" id="date">
+                Wednesday |
+                 10:30
             </span>
             
             
@@ -57,38 +56,7 @@
         </div>
         </div>
             
-        <div class="card-group mb-3">
-            <div class="card-1">
-                <div class="card-body">
-                    <h5 class="card-title">Thursday, 25 May <br />
-                    <i class="fas fa-sun sunny-icon"></i></h5>
-                    <p class="card-text">Sunny <br /> <strong>30º</strong>| 26º</p>
-                </div>
-            </div>
-            <div class="card-2">
-                <div class="card-body">
-                    <h5 class="card-title">Friday, 26 May <br /><i class="fas fa-cloud cloud-icon"></i></h5>
-                    <p class="card-text">Cloudy <br /><strong>25º</strong> |20º</p>
-                </div>
-            </div>
-            <div class="card-3">
-                <div class="card-body">
-                    <h5 class="card-title">Saturday, 27 May <br /><i class="fas fa-cloud-sun partly-icon"></i></h5>
-                    <p class="card-text">Partly Cloud <br /><strong>28º</strong> |24º</p>
-                </div>
-            </div>
-            <div class="card-4">
-                <div class="card-body">
-                    <h5 class="card-title">Sunday, 28 May <br /><i class="fas fa-sun sunny-icon"></i></h5>
-                    <p class="card-text">Sunny <br /> <strong>30º</strong>|27º</p>
-                </div>
-            </div>
-            <div class="card-5">
-                <div class="card-body">
-                    <h5 class="card-title">Monday, 29 May <br /><i class="fas fa-cloud-showers-heavy rain-icon"></i></h5>
-                    <p class="card-text">Light rain <br /><strong>25º</strong> |22º</p>
-                </div>
-            </div>
+        <div class="row hour-forecast" id="forecast">
         </div>
         <p>
         <small>
