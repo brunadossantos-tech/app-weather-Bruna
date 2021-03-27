@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/0cec109dc1.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -14,56 +15,73 @@
 </head>
 <body>
     <div class="container">
-        <h1>Weather Forecast</h1>
+        <div class="weather-wrapp">
         <form class="form" id="search-form">
-        <input id="search-city" type="search" placeholder="Enter city" autocomplete="off" autofocus="on">
-        <button class="search" type="submit" id="search">Search</button>
-        </form>
         <div class="row">
-        <div class="col-9">
-        <h2>
+        <div class="col-7 mt-3 mx-3">
+        <input class="form-control form-control-sm" id="search-city" type="search" placeholder="Enter city" autocomplete="off" autofocus="on">
+        </div>
+        <div class="col-2 gap-3 d-flex mt-3 mx-2">
+        <div class="col">
+        <button class="btn btn-sm btn-primary-outline search-city-button" type="submit" id="search">
+        <i class="fas fa-search"></i>
+        </button>
+        </div>
+        </div>
+        </form>
+        <h2 class="currentCity">
             <strong>
-            <div class="city" id="city">
+            <i class="fas fa-map-marker-alt" id="emoji"></i>
+            <span class="city" id="city">
             Lisbon
-            </div>
+            </span>
             </strong>
             <span class="currentTime" id="date">
-                Wednesday |
+                <br />
+                Wednesday, March 25, 2021 |
                  10:30
             </span>
-            
-            
         </h2>
         <p class= "specifications">
-            <span class="emoji">
+            <span class="simbol">
             <img src="" alt="clear" id="icon"/>
             </span>
             <span class="temperature" id="temperature">10</span>
-            <span class="units"><a href="#" id="Celsius" class="active">ºC</a>| <a href="#" id="Fahrenheit">Fº</a></span>
-            <br />
-            <span class="sky" id="sky">Cloudy</span>
-            <br />
-            Feels like: <span id="feels-like">20</span>ºC
+            <span class="units"><a href="#" id="Celsius" class="active">ºC</a>| <a href="#" id="Fahrenheit">ºF</a></span>
+            <div class="sky" id="sky">Cloudy</div>
         </p>
         </div>
-        <div class="col-3">
-        <ul>
-            <li><strong>Max: </strong><span id="max-temp">18</span>ºC</li>
-            <li><strong>Min: </strong><span id="min-temp">20</span>ºC</li>
-            <li><strong>Humidity </strong>💧: <span id="humidity">55</span>%</li>
-            <li><strong>Wind </strong>💨<span id="wind">10</span>km/h</li>
-        </ul>
+        <div class="main-card-tex">
+            <div class="description">
+            <div class="row">
+                <div class="col-6">
+                    <br />
+                    <span>Max: <i class="fas fa-arrow-up"></span></i><span id="max-temp"> 18</span>º
+                    <br />
+                    <span>Min: <i class="fas fa-arrow-down"></span></i><span id="min-temp"> 20</span>ºC
+                    <br />
+                    <span>Feels: <i class="fas fa-temperature-high"></span></i><span id="feels-like"> 20</span>ºC
+                 </div>   
+                <div class="col-6">
+                    <br />
+                    Humidity: <span id="humidity">55</span>%
+                    <br />
+                    Wind: <span id="wind">10</span>km/h
+                </div>
+          </div>
         </div>
+        </div> 
+        <hr /> 
+        <div class="row hour-forecast" id="hour-forecast"></div> 
         </div>
-            
-        <div class="row hour-forecast" id="forecast">
-        </div>
+       </div>
         <p>
         <small>
             <a href="https://github.com/brunadossantos-tech/app-weather-v2.git" target="_blank">Open-source code </a>
             by Bruna Santos
         </small>
         </p>
+        </div>
      </div>
      <script src="src/index.js"></script>
     </body> 

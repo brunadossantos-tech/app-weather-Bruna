@@ -1,11 +1,59 @@
 
-function formatDate(timestamp){
-    let date = new Date(timestamp);
+const apiKey = "e6fd7ecc8e8874aa21ff2b9996064645";
+const apiUrlWeather = "https://api.openweathermap.org/data/2.5/weather?";
+const apiUrlForecast = "https://api.openweathermap.org/data/2.5/forecast?";
+const units = "metric";
+
+
+function formatDate(){
+    let now = new Date();
 
     let days =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"];
     let currentDay = days[now.getDay()];
 
-    return `${currentDay} | ${formatHours(timestamp)}`;
+    let months = ["January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+    ];
+    let month = months[now.getMonth()];
+    let date = now.getDate();
+    let year = now.getFullYear();
+    let hour = now.getHours();
+    if (hour < 10){
+        hour = `0${hour}`;
+    }
+    let minutes = now.getMinutes();
+    if (minutes < 10){
+        minutes = `0${minutes}`;
+    }
+
+    let dateTimeElement= document.querySelector("#date");
+    dateTimeElement.innerHTML= `${currentDay}, ${month} ${date}, ${year} | ${hour}:${minutes}`;
+}
+formatDate();
+
+function formatDays(timestamp) {
+  let now = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  return `${day}`;
 }
 
 function formatHours (timestamp){
@@ -43,32 +91,50 @@ function showWeather(response){
     windElement.innerHTML= response.data.wind.speed;
     humidityElement.innerHTML=response.data.main.humidity;
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    icon.Element.setAttribute("alt", response.data.weather[0].description);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
+
+    let latitude = response.data.coord.lon;
+    let longitude = response.data.coord.lat;
+    //forecastDaily(latitude, longitude);
 }
 
+
+//function forecastDaily(latitude, longitude){
+    //let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&appid=${apiKey}&units=${units}`;
+    //axios.get(apiUrl).then(showForecast);
+//}
+
 function showForecast(response){
-    let forecastElement = document.querySelector("#forecast");
+    let forecastElement = document.querySelector("#hour-forecast");
     forecastElement.innerHTML = null;
     let forecast = null;
 
-    for (let index =0; index < 6; index++){
+    for (let index = 0 ; index < 6; index++){
         forecast = response.data.list[index];
+
         forecastElement.innerHTML += `
-        <div class="col-2">
-                <h5 class="card-title"> ${formatHours(forecast.dt*1000)} <br />
-                <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" id="icon-2" /></h5>
-                <strong>${Math.round(forecast.main.temp_max)}º</strong>| ${Math.round(forecast.main.temp_min)}º</p>
+           <div class="col-2">
+           <h3>
+            ${formatHours(forecast.dt* 1000)}
+            </h3>
+            <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="clear" id="icon-2" />
+
+            <div class="maxmin"> 
+            <strong>
+            ${Math.round(forecast.main.temp_max)}º
+            </strong> |
+            ${Math.round(forecast.main.temp_min)}º
+            </div>
             </div>`;
     }
 }
 
 function displayCityWeather(city){
-    let apiKey = "e6fd7ecc8e8874aa21ff2b9996064645";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showWeather);
+    let apiWeatherstring = `${apiUrlWeather}q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiWeatherstring).then(showWeather);
 
-    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showForecast);
+    let apiForecastString = `${apiUrlForecast}q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiForecastString).then(showForecast);
 }
 
 function searchCity(event){
