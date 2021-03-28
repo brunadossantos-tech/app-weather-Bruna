@@ -29,7 +29,6 @@ p {
   display: block;
   height: 600px;
   width: 520px;
-  width: 150%;
 }
 .weather-wrapp {
   border-radius: 10px;
@@ -38,6 +37,7 @@ p {
   display: block;
   margin: 0 auto;
   margin-top: 20px;
+  width: 100%;
 }
 #search {
   color: white;
