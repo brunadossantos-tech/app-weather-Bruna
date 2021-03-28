@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: Avenir;
   margin: 0;
@@ -5,7 +8,6 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  box-sizing: border-box;
 }
 .currentCity {
   text-align: center;
@@ -17,7 +19,7 @@ body {
 p {
   text-align: center;
 }
-.container-fluid {
+.container {
   background: linear-gradient(
     359deg,
     rgb(150, 192, 255) -17.7%,
@@ -65,7 +67,7 @@ p {
 }
 hr {
   margin: 0 auto;
-  padding-bottom: 0px;
+  padding: 0;
   margin-bottom: 10px;
 }
 .hour-forecast h3 {
@@ -89,7 +91,6 @@ hr {
   font-weight: 400;
   height: auto;
   line-height: 15px;
-  white-space: nowrap;
 }
 .temperature {
   font-size: 60px;
