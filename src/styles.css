@@ -21,9 +21,9 @@ p {
 }
 .container {
   background: linear-gradient(
-    359deg,
-    rgb(150, 192, 255) -17.7%,
-    rgb(255, 180, 161) 101.5%
+    180.3deg,
+    rgb(214, 224, 255) 37.2%,
+    rgb(254, 168, 168) 137.3%
   );
   box-shadow: 0 5px 5px rgba(172, 169, 169, 0.2);
   margin-top: 10px;
