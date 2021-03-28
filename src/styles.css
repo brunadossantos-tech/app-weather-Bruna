@@ -1,10 +1,9 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 body {
   font-family: Avenir;
+  margin: 0;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
 }
 .currentCity {
   text-align: center;
@@ -22,8 +21,7 @@ p {
     rgb(150, 192, 255) -17.7%,
     rgb(255, 180, 161) 101.5%
   );
-  box-shadow: 0 5px 5px rgba(172, 169, 169, 0.2),
-    0px 0px 5px rgba(145, 143, 143, 0.2);
+  box-shadow: 0 5px 5px rgba(172, 169, 169, 0.2);
   margin-top: 10px;
   border-radius: 10px;
   display: block;
@@ -59,9 +57,10 @@ p {
   padding-top: 0px;
   padding-left: 10px;
   padding-right: 15px;
-  border: 1px solid rgb(112, 109, 109);
-  box-shadow: 0 5px 5px rgba(172, 169, 169, 0.2),
-    0px 0px 5px rgba(145, 143, 143, 0.2);
+  border: 1px solid rgb(87, 85, 85);
+  box-shadow: 0 5px 5px rgba(172, 169, 169, 0.2);
+  color: rgb(87, 85, 85);
+  font-weight: 400;
 }
 hr {
   margin: 0 auto;
