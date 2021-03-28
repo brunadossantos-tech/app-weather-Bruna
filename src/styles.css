@@ -17,7 +17,7 @@ body {
 p {
   text-align: center;
 }
-.container {
+.container-fluid {
   background: linear-gradient(
     359deg,
     rgb(150, 192, 255) -17.7%,
