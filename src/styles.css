@@ -27,9 +27,8 @@ p {
   margin-top: 10px;
   border-radius: 10px;
   display: block;
-  max-height: 600px;
-  width: 100%;
-  max-width: 520px;
+  height: 600px;
+  width: 520px;
 }
 .weather-wrapp {
   border-radius: 10px;
