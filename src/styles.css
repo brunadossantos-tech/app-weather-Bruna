@@ -29,6 +29,7 @@ p {
   display: block;
   height: 600px;
   width: 520px;
+  width: 100%;
 }
 .weather-wrapp {
   border-radius: 10px;
